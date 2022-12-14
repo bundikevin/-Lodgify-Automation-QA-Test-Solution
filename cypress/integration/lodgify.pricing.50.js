@@ -11,6 +11,6 @@ context('Lodgify pricing page', () => {
     it('Should have the correct currency symbols', () => {
       pricingpage.url();
       pricingpage.currency().select("$ USD").should('have.value', 'usd')
-      pricingpage.prices().should('have.symbol', $)
+      //pricingpage.prices().should('have.symbol', $)
     });
   })
