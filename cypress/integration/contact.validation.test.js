@@ -2,7 +2,7 @@ import contact from "../support/contact-page-objects/contact";
 const contactpage = new contact;
 
 context('Lodgify contact page', () => {
-/*
+
     //Verify all required fields have the right validation messages
     it('Should have the right validation message', () => {
       contactpage.url();
@@ -12,7 +12,7 @@ context('Lodgify contact page', () => {
       cy.get('div').contains('Email is mandatory').should('have.text', 'Email is mandatory')
       cy.get('div').contains('Comment is mandatory').should('have.text', 'Comment is mandatory')
     });
-     */
+     
      //Enter valid data into the text fields
     it('Should send valid data successfully', () => {
       contactpage.url();
@@ -25,11 +25,11 @@ context('Lodgify contact page', () => {
       cy.get('textarea').type("Hello");
       cy.get('button').contains('Send').click();
       */
-      contactpage.name().type('Kevin')
+      //contactpage.name().type('Kevin')
       contactpage.phoneNumber().type('0719570513')
       contactpage.emailAddress().type('tester254.acc@gmail.com')
-      contactpage.arrivalDate().click()
-      contactpage.departureDate().click()
+      contactpage.arrivalDate().click().select($CurrentDate)
+      contactpage.departureDate().click().select($CurrentDate)
       contactpage.textarea().type('Good morning there?')
       contactpage.send().click()
       
